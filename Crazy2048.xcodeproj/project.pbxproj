@@ -12,6 +12,10 @@
 		1B1593E81E744CD100EE0203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1593E61E744CD100EE0203 /* Main.storyboard */; };
 		1B1593EA1E744CD100EE0203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1593E91E744CD100EE0203 /* Assets.xcassets */; };
 		1B1593ED1E744CD100EE0203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1593EB1E744CD100EE0203 /* LaunchScreen.storyboard */; };
+		1B1593F91E744DB400EE0203 /* TileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1593F81E744DB400EE0203 /* TileModel.swift */; };
+		1B1593FB1E744DF200EE0203 /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1593FA1E744DF200EE0203 /* RandomNumber.swift */; };
+		1B1593FD1E744E3100EE0203 /* TileLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1593FC1E744E3100EE0203 /* TileLabel.swift */; };
+		1B1593FF1E744E7400EE0203 /* Gameboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1593FE1E744E7400EE0203 /* Gameboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		1B1593E91E744CD100EE0203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B1593EC1E744CD100EE0203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B1593EE1E744CD100EE0203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B1593F81E744DB400EE0203 /* TileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileModel.swift; sourceTree = "<group>"; };
+		1B1593FA1E744DF200EE0203 /* RandomNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumber.swift; sourceTree = "<group>"; };
+		1B1593FC1E744E3100EE0203 /* TileLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLabel.swift; sourceTree = "<group>"; };
+		1B1593FE1E744E7400EE0203 /* Gameboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,50 @@
 		1B1593E11E744CD100EE0203 /* Crazy2048 */ = {
 			isa = PBXGroup;
 			children = (
-				1B1593E21E744CD100EE0203 /* AppDelegate.swift */,
-				1B1593E41E744CD100EE0203 /* ViewController.swift */,
-				1B1593E61E744CD100EE0203 /* Main.storyboard */,
-				1B1593E91E744CD100EE0203 /* Assets.xcassets */,
-				1B1593EB1E744CD100EE0203 /* LaunchScreen.storyboard */,
-				1B1593EE1E744CD100EE0203 /* Info.plist */,
+				1B1593F41E744D3000EE0203 /* Model */,
+				1B1593F51E744D3B00EE0203 /* view */,
+				1B1593F61E744D4700EE0203 /* Controller */,
+				1B1593F71E744D7600EE0203 /* sources */,
 			);
 			path = Crazy2048;
+			sourceTree = "<group>";
+		};
+		1B1593F41E744D3000EE0203 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B1593F81E744DB400EE0203 /* TileModel.swift */,
+				1B1593FA1E744DF200EE0203 /* RandomNumber.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1B1593F51E744D3B00EE0203 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1B1593E61E744CD100EE0203 /* Main.storyboard */,
+				1B1593FC1E744E3100EE0203 /* TileLabel.swift */,
+				1B1593FE1E744E7400EE0203 /* Gameboard.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		1B1593F61E744D4700EE0203 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B1593E41E744CD100EE0203 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1B1593F71E744D7600EE0203 /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				1B1593E21E744CD100EE0203 /* AppDelegate.swift */,
+				1B1593EB1E744CD100EE0203 /* LaunchScreen.storyboard */,
+				1B1593EE1E744CD100EE0203 /* Info.plist */,
+				1B1593E91E744CD100EE0203 /* Assets.xcassets */,
+			);
+			name = sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +183,10 @@
 			files = (
 				1B1593E51E744CD100EE0203 /* ViewController.swift in Sources */,
 				1B1593E31E744CD100EE0203 /* AppDelegate.swift in Sources */,
+				1B1593FF1E744E7400EE0203 /* Gameboard.swift in Sources */,
+				1B1593F91E744DB400EE0203 /* TileModel.swift in Sources */,
+				1B1593FD1E744E3100EE0203 /* TileLabel.swift in Sources */,
+				1B1593FB1E744DF200EE0203 /* RandomNumber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

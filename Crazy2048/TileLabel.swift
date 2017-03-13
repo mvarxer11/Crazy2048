@@ -28,14 +28,15 @@ class TileLabel: UIView {
         label.textColor = .black
         label.text = String(value)
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize:20,weight: 2)
+        label.font = UIFont.systemFont(ofSize: self.bounds.width/1.6)
         label.adjustsFontSizeToFitWidth = true
         self.addSubview(label)
         self.backgroundColor = tileColor
-        self.layer.cornerRadius = 5
+        self.layer.cornerRadius = 10
         self.layer.borderColor = UIColor.darkGray.cgColor
         self.layer.borderWidth = 1
     }
+    
     
     //纯代码创建
     init(frame: CGRect,value:Int,rank:Int) {

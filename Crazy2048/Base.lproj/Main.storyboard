@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,22 +20,110 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdV-Xq-Cte">
-                                <rect key="frame" x="108" y="59" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geD-np-Q9y" customClass="GameBoard" customModule="Crazy2048" customModuleProvider="target">
+                                <rect key="frame" x="16" y="150.5" width="288" height="397.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="space">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rows">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backTileColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="columns">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQu-rW-lF7" customClass="NextTile" customModule="Crazy2048" customModuleProvider="target">
+                                <rect key="frame" x="240" y="83.5" width="64" height="57"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v8G-YC-euL">
+                                <rect key="frame" x="16" y="16" width="192" height="124.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34D-AE-OX2" customClass="TitleBlock" customModule="Crazy2048" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                                                <color key="value" red="0.25324115159999999" green="0.47720381620000002" blue="0.73651242260000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="string1" value="最高分"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="string2" value="0"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbE-hL-5KR" customClass="TitleBlock" customModule="Crazy2048" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="45" width="192" height="34.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                                                <color key="value" red="0.25324115159999999" green="0.47720381620000002" blue="0.73651242260000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="string1" value="当前分"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="string2" value="0"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdC-Zt-ESx">
+                                        <rect key="frame" x="0.0" y="89.5" width="192" height="35"/>
+                                        <color key="backgroundColor" red="0.25324115159999999" green="0.47720381620000002" blue="0.73651242260000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="重新开始">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lz6-fB-gsq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下一个" textAlignment="right" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="xoR-LV-XpD">
+                                <rect key="frame" x="265.5" y="52" width="38.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="83"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VQu-rW-lF7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="1Ob-Gb-Lp7"/>
+                            <constraint firstItem="xoR-LV-XpD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="F9d-D4-AcH"/>
+                            <constraint firstItem="geD-np-Q9y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="RIH-iW-uu2"/>
+                            <constraint firstItem="geD-np-Q9y" firstAttribute="top" secondItem="v8G-YC-euL" secondAttribute="bottom" constant="10" id="ScU-5g-Mkt"/>
+                            <constraint firstItem="VQu-rW-lF7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="Vp7-e5-hUI"/>
+                            <constraint firstItem="VQu-rW-lF7" firstAttribute="bottom" secondItem="v8G-YC-euL" secondAttribute="bottom" id="XK1-eg-KOk"/>
+                            <constraint firstAttribute="trailing" secondItem="geD-np-Q9y" secondAttribute="trailing" constant="16" id="XgL-KE-VQ6"/>
+                            <constraint firstItem="geD-np-Q9y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="dCd-Gv-vw2"/>
+                            <constraint firstItem="v8G-YC-euL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="16" id="dc0-18-1cL"/>
+                            <constraint firstItem="VQu-rW-lF7" firstAttribute="top" secondItem="xoR-LV-XpD" secondAttribute="bottom" constant="10.333333333333314" id="mEv-I2-T9l"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="geD-np-Q9y" secondAttribute="bottom" constant="20" id="ojq-xU-cEf"/>
+                            <constraint firstItem="xoR-LV-XpD" firstAttribute="height" secondItem="VQu-rW-lF7" secondAttribute="height" multiplier="0.35" id="p6k-IL-D7H"/>
+                            <constraint firstItem="xoR-LV-XpD" firstAttribute="width" secondItem="VQu-rW-lF7" secondAttribute="width" multiplier="0.6" id="puZ-as-DEv"/>
+                            <constraint firstItem="VQu-rW-lF7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pvd-l3-CeC"/>
+                            <constraint firstItem="v8G-YC-euL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="ruQ-gl-2n2"/>
+                            <constraint firstItem="v8G-YC-euL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vQj-oB-ogO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentScore" destination="IbE-hL-5KR" id="aEX-1X-EWN"/>
+                        <outlet property="gameBoard" destination="geD-np-Q9y" id="4Z3-qQ-2bg"/>
+                        <outlet property="highestScore" destination="34D-AE-OX2" id="toa-bQ-BJF"/>
+                        <outlet property="nextTile" destination="VQu-rW-lF7" id="5sN-xV-SFS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="75.815217391304358"/>
         </scene>
     </scenes>
 </document>
